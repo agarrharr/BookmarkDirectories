@@ -15,9 +15,10 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section {
-                    ForEach(bookmarkController.urls, id: \.self) { url in
+                    ForEach(bookmarkController.bookmarks, id: \.uuid) { _, url in
                         Text(url.lastPathComponent)
                     }
+                    .onDelete(perform: bookmarkController.removeBookmark)
                 }
                 
                 Button {

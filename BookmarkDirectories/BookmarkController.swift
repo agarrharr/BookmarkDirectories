@@ -8,13 +8,13 @@
 import SwiftUI
 
 class BookmarkController: ObservableObject {
-    @Published var urls: [URL] = []
+    @Published var bookmarks: [(uuid: String, url: URL)] = []
     
     init(loadFakeData: Bool = false) {
         if loadFakeData {
-            urls = [
-                URL(string: "some/path/Notes")!,
-                URL(string: "some/path/Family%20Notes")!
+            bookmarks = [
+                ("123", URL(string: "some/path/Notes")!),
+                ("124", URL(string: "some/path/Family%20Notes")!)
             ]
         } else {
             loadAllBookmarks()
@@ -41,7 +41,7 @@ class BookmarkController: ObservableObject {
             
             // Add the URL to the urls array
             withAnimation {
-                urls.append(url)
+                bookmarks.append((uuid, url))
             }
         }
         catch {
@@ -54,7 +54,7 @@ class BookmarkController: ObservableObject {
         // Get all the bookmark files
         let files = try? FileManager.default.contentsOfDirectory(at: getAppSandboxDirectory(), includingPropertiesForKeys: nil)
         // Map over the bookmark files
-        self.urls = files?.compactMap { file in
+        self.bookmarks = files?.compactMap { file in
             do {
                 let bookmarkData = try Data(contentsOf: file)
                 var isStale = false
@@ -67,13 +67,26 @@ class BookmarkController: ObservableObject {
                 }
                 
                 // Return URL
-                return url
+                return (file.lastPathComponent, url)
             }
             catch {
                 // Handle the error here.
                 return nil
             }
         } ?? []
+    }
+    
+    func removeBookmark(at offsets: IndexSet) {
+        let uuids = offsets.map( { bookmarks[$0].uuid })
+        
+        // Remove bookmarks from  urls array
+        bookmarks.remove(atOffsets: offsets)
+        
+        // Delete the bookmark file
+        uuids.forEach({ uuid in
+            let url = getAppSandboxDirectory().appendingPathComponent(uuid)
+            try? FileManager.default.removeItem(at: url)
+        })
     }
     
     private func getAppSandboxDirectory() -> URL {
