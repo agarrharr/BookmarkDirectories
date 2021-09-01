@@ -34,7 +34,7 @@ struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             DetailView(url: URL(string: "path/to/Notes")!)
-                .environmentObject(FileController())
+                .environmentObject(FileController(isPreview: true))
         }
     }
 }
