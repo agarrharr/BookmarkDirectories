@@ -16,7 +16,7 @@ struct ContentView: View {
             List {
                 Section {
                     ForEach(bookmarkController.bookmarks, id: \.uuid) { _, url in
-                        Text(url.lastPathComponent)
+                        NavigationLink(url.lastPathComponent, destination: DetailView(url: url))
                     }
                     .onDelete(perform: bookmarkController.removeBookmark)
                 }

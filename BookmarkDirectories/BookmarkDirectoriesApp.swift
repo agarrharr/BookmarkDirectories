@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct BookmarkDirectoriesApp: App {
     @StateObject var bookmarkController = BookmarkController()
+    @StateObject var fileController = FileController()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(bookmarkController)
+                .environmentObject(fileController)
         }
     }
 }

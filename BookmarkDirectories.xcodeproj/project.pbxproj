@@ -13,6 +13,8 @@
 		99450C2D26D01BE800716850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99450C2C26D01BE800716850 /* Preview Assets.xcassets */; };
 		99450C3526D02D5600716850 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99450C3426D02D5500716850 /* DocumentPicker.swift */; };
 		99450C3726D032ED00716850 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99450C3626D032ED00716850 /* BookmarkController.swift */; };
+		9953EC6426DFEC8C001EBFC5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953EC6326DFEC8C001EBFC5 /* DetailView.swift */; };
+		9953EC6626DFED57001EBFC5 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953EC6526DFED57001EBFC5 /* FileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		99450C2E26D01BE800716850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99450C3426D02D5500716850 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		99450C3626D032ED00716850 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
+		9953EC6326DFEC8C001EBFC5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		9953EC6526DFED57001EBFC5 /* FileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				99450C2B26D01BE800716850 /* Preview Content */,
 				99450C3426D02D5500716850 /* DocumentPicker.swift */,
 				99450C3626D032ED00716850 /* BookmarkController.swift */,
+				9953EC6326DFEC8C001EBFC5 /* DetailView.swift */,
+				9953EC6526DFED57001EBFC5 /* FileController.swift */,
 			);
 			path = BookmarkDirectories;
 			sourceTree = "<group>";
@@ -147,6 +153,8 @@
 				99450C2826D01BE500716850 /* ContentView.swift in Sources */,
 				99450C3726D032ED00716850 /* BookmarkController.swift in Sources */,
 				99450C3526D02D5600716850 /* DocumentPicker.swift in Sources */,
+				9953EC6626DFED57001EBFC5 /* FileController.swift in Sources */,
+				9953EC6426DFEC8C001EBFC5 /* DetailView.swift in Sources */,
 				99450C2626D01BE500716850 /* BookmarkDirectoriesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
